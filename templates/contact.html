@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="Password, Manager, Password Manager">
+    <meta name="author" content="PaperCode C.S">
+    <meta name="description" content="This is a free password management site which enables users to effortlessly create, store and manage secure qr code hashed passwords">
+
+    <title>CONTACT - ПАРОЛЬ SICHERHEIT</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style media="screen">
+      *{
+        margin: 0;
+        padding: 0;
+        font-family:'Bahnschrift Condensed';
+      }
+      body{
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("{% static 'images/codepurple.jpg' %}");
+        background-size: cover;
+        color: #fff;
+      }
+
+      h1{
+        letter-spacing: 1px;
+        text-align: center;
+        font-size: 43px;
+        color: white;
+        padding-top: 100px;
+      }
+      h1::after{
+        content: '';
+        background: #19d7f8;
+        display: block;
+        width: 170px;
+        height: 3px;
+        margin: 20px auto 120px;
+      }
+
+      .container .contactForm{
+        width: 30%;
+        padding: 40px;
+        background: #fff;
+        top: 55%;
+        left: 50%;
+        position: absolute;
+        box-sizing: border-box;
+        transform: translate(-50%, -50%);
+      }
+
+
+      .contactForm h2{
+        font-size: 30px;
+        color: #833;
+        font-weight: 500;
+      }
+
+      .contactForm .inputBox{
+        width: 100%;
+        position: relative;
+        margin-top: : 10px;
+      }
+
+      .contactForm .inputBox input,
+      .contactForm .inputBox textarea{
+        width: 100%;
+        padding: 5px 0;
+        font-size: 16px;
+        margin: 10px 0;
+        border: none;
+        border-bottom: 2px solid #333;
+        outline: none;
+        resize: none;
+      }
+
+      .contactForm .inputBox span{
+        position: absolute;
+        left: 0;
+        padding: 5px 0;
+        font-size: 16px;
+        margin: 10px 0;
+        pointer-events: none;
+        transition: 0.5s;
+        color: #666;
+      }
+
+      .contactForm .inputBox input:focus ~ span,
+      .contactForm .inputBox input:valid ~ span,
+      .contactForm .inputBox textarea:focus ~ span,
+      .contactForm .inputBox textarea:valid ~ span {
+        color: #e91e63;
+        font-size: 12px;
+        transform: translateY(-20px);
+      }
+
+      .inputBox input[type="submit"]{
+        width: 100px;
+        background: linear-gradient(#42455a,#42455a), radial-gradient(circle at top left, #fd00da, #19d7f8);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        font-size: 18px;
+
+      }
+
+
+
+    </style>
+  </head>
+  <body>
+    <section class="service">
+      <div class="content-box">
+        <div class="container">
+          <h1>Contact Us</h1>
+          <div class="row service">
+
+            <div class="contactForm">
+              <form class="" action="index.html" method="post">
+                <h2>Send Message</h2>
+
+                <div class="inputBox">
+                  <input type="text" name="" value="" required="required">
+                  <span>Full Name</span>
+                </div>
+
+                <div class="inputBox">
+                  <input type="text" name="" value="" required="required">
+                  <span>Email</span>
+                </div>
+
+                <div class="inputBox">
+                  <textarea name="name" rows="5" cols="80" required="required"></textarea>
+                  <span>Type your Message...</span>
+
+                </div>
+
+                <div class="inputBox">
+                  <input type="submit" name="" value="Send">
+                </div>
+
+              </form>
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        </div>
+      </div>
+
+    </section>
+
+
+  </body>
+</html>

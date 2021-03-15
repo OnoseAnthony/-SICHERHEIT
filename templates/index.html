@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="Password, Manager, Password Manager">
+    <meta name="author" content="PaperCode C.S">
+    <meta name="description" content="This is a free password management site which enables users to effortlessly create, store and manage secure qr code hashed passwords">
+
+    <title>INDEX - ПАРОЛЬ SICHERHEIT</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom stlylesheet -->
+    <style>
+      body{
+        margin:0px;
+        background: #1E242A;
+        }
+        #main{
+          width:100%;
+          height:100%;
+          position: absolute;
+          overflow: hidden;
+        }
+        #box1{
+          width: 530px;
+          height: 625px;
+          background-image:url("{% static 'images/hand1.png' %}");
+          position: absolute;
+          bottom: -100%;
+          left: 30%;
+          animation: anim 2s forwards, anim2 3s forwards 3s;
+        }
+        #box1:after {
+          content: '';
+          position: absolute;
+          width: 530px;
+          height: 625px;
+          background-image: url("{% static 'images/hand1.png' %}");
+          left: 0px;
+          z-index: -1;
+        }
+        @keyframes anim {
+          from{
+            bottom: -100%;
+          }
+          to{
+            bottom: 0%;
+          }
+        }
+        @keyframes anim2 {
+          from{
+            left: 30%;
+            width: 530px;
+          }
+          to{
+            width: 0%;
+            left: 50%;
+          }
+        }
+        #login-btn{
+          color: #ffffff;
+          text-decoration: none;
+          border: 2px solid transparent;
+          border-radius: 20px;
+          background-image: linear-gradient(#42455a,#42455a), radial-gradient(circle at top left, #fd00da, #19d7f8);
+          background-origin: border-box;
+          background-clip: content-box,border-box;
+          text-align: center;
+        }
+        #login-btn span{
+          display: block;
+          padding: 8px 25px;
+        }
+        #box2{
+          width: 80%;
+          height: 70%;
+          font-family: 'Bahnschrift Condensed';
+          color: white;
+          position: absolute;
+          top: 25%;
+          left: 130px;
+          overflow: hidden;
+        }
+        #text{
+          width: 50%;
+          float: left;
+          position: relative;
+          left: -100%;
+          animation: anim3 2s forwards 3s;
+        }
+        #text h1{
+          font-size: 43px;
+          width: 640px;
+          position: relative;
+          margin-left: 40px;
+        }
+        #text p{
+          width: 650px;
+          font-size: 20px;
+          margin: 30px 0 30px 40px;
+          line-height: 25px;
+          color: #919191;
+        }
+        #play-btn{
+          margin-left: 40px;
+          display: inline-flex;
+        }
+        #play-btn-inner{
+          height: 50px;
+          width: 50px;
+          border: 2px solid transparent;
+          border-radius: 50%;
+          background-image: linear-gradient(#42455a,#42455a), radial-gradient(circle at top left, #fd00da, #19d7f8);
+          background-origin: border-box;
+          background-clip: content-box,border-box;
+          text-align: center;
+        }
+        #play-btn-inner .fa{
+          padding: 18px 0;
+          font-size: 13px;
+          cursor: pointer;
+        }
+        small{
+          margin: auto 20px;
+          cursor: pointer;
+          font-size: 12px;
+          color: #19dafa;
+          letter-spacing: 3px;
+        }
+        small a{
+          color: #19dafa;
+        }
+        #quick-links{
+          left: 0;
+          bottom: 0;
+          position: absolute;
+          background: linear-gradient(to right, #db1bf6, #19d7f8);
+        }
+        #quick-links ul{
+          display: inline-flex;
+          margin: 15px auto;
+          text-align: center;
+        }
+        #quick-links ul li{
+          list-style: none;
+          margin: 0 35px;
+          cursor: pointer;
+        }
+        #quick-links ul li p{
+          margin-top: 15px;
+          font-size: 15px;
+          color: #ffffff;
+        }
+        @keyframes anim3 {
+          from{
+            left: -100%%;
+
+          }
+          to{
+            left: 0%;
+
+          }
+        }
+        a{
+          text-decoration: none;
+        }
+        #box3{
+          overflow: hidden;
+        }
+        #container{
+          width: 100%;
+          position:absolute;
+          top: -100%;
+          animation: anim4 2s forwards 2.5s;
+        }
+        #logo{
+          float: left;
+          margin-left: 100px;
+          margin-top: 20px;
+        }
+        #logo img{
+          width:50px;
+        }
+        #menu{
+          font-family: 'Bahnschrift Condensed';
+          font-size: 18px;
+          color: white;
+          letter-spacing: 2px;
+          margin-right: 150px;
+          margin-top: 20px;
+          float: right;
+        }
+        #menu ul{
+          list-style: none;
+        }
+        #menu ul li{
+          display: inline-flex;
+          margin-left: 100px;
+        }
+        @keyframes anim4 {
+           from{
+             top: -100%;
+            }
+           to{
+             top: 0%;
+           }
+        }
+    </style>
+  </head>
+  <body>
+
+    <div id="main" >
+      <div id="box1"></div>
+
+      <div id="box2">
+        <div id="text">
+          <h1>Our viewpoint is that using randomly generated secure
+            passwords is the basis for cybersecurity.</h1>
+            <p>Open source minimalistic way to generate, manage and store passwords. Putting your digital life at your fingertips, using efforless security.</p>
+            <div id="play-btn">
+              <div id="play-btn-inner"><i class="fa fa-play"></i></div>
+              <small><b><a href="{% url 'manager:register' %}">GET STARTED</a></b></small>
+
+            </div>
+        </div>
+      </div>
+
+      <div id="quick-links">
+        <ul>
+          <li><a href="{% url 'about' %}"><p><b>ABOUT SICHERHEIT</b></p></a></li>
+          <li><a href="{% url 'services' %}"><p><b>SICHERHEIT SERVICES</b></p></a></li>
+          <li><a href="{% url 'contact' %}"><p><b>CONTACT SICHERHEIT</b></p></a></li>
+        </ul>
+      </div>
+
+      <div id="box3">
+        <div id="container">
+          <div id="logo">
+            <a href="{% url 'home' %}"><small><h1>ПАРОЛЬ SICHERHEIT</h1></small></a>
+          </div>
+          <div id="menu">
+            <ul>
+              <li><a href="{% url 'manager:user_login' %}" id="login-btn"><span>Login</span></a></li>
+            </ul>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </body>
+</html>

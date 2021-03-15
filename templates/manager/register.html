@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+{% load static %}
+{% load widget_tweaks %}
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content="Password, Manager, Password Manager">
+    <meta name="author" content="PaperCode C.S">
+    <meta name="description" content="This is a free password management site which enables users to effortlessly create, store and manage secure qr code hashed passwords">
+
+    <title>REGISTER - ПАРОЛЬ SICHERHEIT</title>
+
+    <style media="screen">
+      body{
+        margin: 0;
+        padding: 0;
+        background: url("{% static 'images/pexels.jpg' %}");
+        background-size: cover;
+        font-family: Bahnschrift Condensed;
+      }
+      #loginbox{
+        width: 470px;
+        height: 570px;
+        background: #000000;
+        color: #ffffff;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        box-sizing: border-box;
+        padding: 40px 40px;
+      }
+
+      h1{
+        margin: 0;
+        padding: 0 0 20px;
+        text-align: center;
+        font-size: 25px;
+      }
+
+      #loginbox p{
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+      }
+
+      #loginbox input{
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      #loginbox .input{
+        border: none;
+        border-bottom: 1px solid #ffffff;
+        background: transparent;
+        outline: none;
+        height: 40px;
+        color: #ffffff;
+        font-size: 16px;
+      }
+
+      #loginbox input[type="submit"]{
+        color: #ffffff;
+        text-decoration: none;
+        outline: none;
+        border: none;
+        height: 45px;
+        border-radius: 20px;
+        background-image: linear-gradient(#42455a,#42455a), radial-gradient(circle at top left, #fd00da, #19d7f8);
+        background-origin: border-box;
+        background-clip: content-box,border-box;
+        text-align: center;
+        font-size: 15px;
+      }
+
+      #loginbox input[type="submit"]:hover{
+        cursor: pointer;
+        background: #19d7f8;
+      }
+      #loginbox a{
+        text-decoration: none;
+        font-size: 14px;
+        line-height: 20px;
+        color: darkgrey;
+      }
+
+      #loginbox a:hover{
+        color: #19d7f8
+      }
+
+    </style>
+  </head>
+  <body>
+
+
+  <div id="loginbox">
+    <h1>Register Here</h1><br>
+    <form method="POST">
+      {% csrf_token %}
+
+      {% if messages %}
+        <ul class="">
+          {% for message in messages %}
+            {% if 'esignup' in message.tags %}
+
+            <div class="alert alert-danger">
+                <a class="close" href="#" data-dismiss="alert">×</a>
+
+            {{ message }}
+
+            {% endif%}
+
+          </div>
+          {% endfor %}
+        </ul>
+      {% endif %}
+
+      <p>Username</p>
+      <div id="">{{ form.username|add_class:"input"|attr:"placeholder:Enter Username"  }}</div>
+
+      <p>Email address</p>
+      <div id="">{{ form.email|add_class:"input"|attr:"placeholder:Enter Email"    }}</div>
+
+      <p>Password</p>
+      <div id="">{{ form.password1|add_class:"input"|attr:"placeholder:Enter Password"    }}</div>
+
+      <p>Password Confirmation</p>
+      <div id="">{{ form.password2|add_class:"input"|attr:"placeholder:Confirm Password"  }}</div><br>
+      <input type="submit" name="" value="Register" ><br>
+
+      <a href="{% url 'manager:user_login' %}">Already have an account ?</a><br>
+    </form>
+
+  </div>
+
+  </body>
+</html>
