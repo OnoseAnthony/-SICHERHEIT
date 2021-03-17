@@ -14,6 +14,7 @@
 
     <!-- Custom stlylesheet -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/popups.css' %}">
 
     <style media="screen">
 
@@ -234,7 +235,7 @@
                     </li>
                     <li class="photo__item">
                       <img
-                        src="code.jpg"
+                        src="{% static 'images/codepurple.jpg' %}"
                         alt="Jessica's photo"
                       />
                     </li>
@@ -350,6 +351,7 @@
            <li class="project__item">
              <a href="#" class="project__link focus--box-shadow">
                <div class="project__wrapper">
+
                  <div class="project__element project__icon">
                    <div
                      class="icon icon--viking"
@@ -366,30 +368,36 @@
                      </svg>
                    </div>
                  </div>
+
                  <div class="project__element project__inform">
                    <span class="project__inform-name"
-                     >{{ item.registered_username }} | {{ item.registered_email_address }}  </span
+                     >{{ item.application_service_name }} | {{ item.application_service_url }}  </span
                    >
                  </div>
 
-                 <div class="project__element project__date">
-                   <time class="date" datetime="2020-05-05T10:00:00"
-                     >{{ item.password }}</time
-                   >
-                 </div>
+                 <div class="project__element project__inform">
+                  <span class="project__inform-name"
+                    >{{ item.registered_username }} | {{ item.registered_email_address }}  </span
+                  >
+                </div>
+
 
                  <div class="project__element project__date">
                    <time class="date" datetime="2020-05-05T10:00:00"
-                     >{{ item.application_service_name }} | {{ item.application_service_url }}</time
+                     >{{ item.date_created}} </time
                    >
                  </div>
+
+
                  <div class="project__element project__status">
-                   <span class="status status--published">{{ item.registered_username }}</span>
+                   <span class="status status--published">Active</span>
                  </div>
+
                  <div class="project__element project__setting">
                    <button
                      class="setting setting--rotate focus--box-shadow"
                      type="button"
+                     id="open-popup-btn"
                    >
                      <svg
                        enable-background="new 0 0 515.555 515.555"
@@ -414,6 +422,73 @@
              </a>
            </li>
 
+
+           <div class="popup center">
+            <div class="icon">
+              <i class="fa fa-check"></i>
+            </div>
+            <div class="description">
+              <button id="open-show-password-popup-btn">View Password</button>
+            </div>
+  
+            <div class="description">
+              <button id="open-delete-password-popup-btn">Recycle Password</button>
+            </div>
+  
+            <div class="dismiss-btn">
+              <button id="dismiss-popup-btn"> Dismiss </button>
+            </div>
+          </div>
+
+          <div class="show-password-popup center">
+            <div class="icon">
+              <i class="fa fa-check"></i>
+            </div>
+  
+            <div class="title">
+              <button>Scan to copy Password</button>
+            </div>
+  
+            <div class="description">
+              <img src={{ item.qrcode_image }} alt="">
+            </div>
+  
+            <div class="description">
+              <button type="button" name="button">{{ item.registered_email_address }</button>
+            </div><br>
+  
+            <div class="dismiss-btn">
+              <button id="dismiss-show-password-popup-btn"> Dismiss </button>
+            </div>
+          </div>
+  
+
+
+                  
+        <div class="delete-password-popup center">
+          <div class="icon">
+            <i class="fa fa-check"></i>
+          </div>
+          <div class="description">
+            <button>Are you sure you want to delete this password?</button>
+          </div>
+
+          <div class="description">
+            <button>There is no going back</button>
+          </div>
+
+
+          <div class="description">
+            <button type="button" name="button">Continue</button>
+          </div><br>
+
+          <div class="dismiss-btn">
+            <button id="dismiss-delete-password-popup-btn"> Dismiss </button>
+          </div>
+        </div>
+
+
+   
 
 
            {% empty %}
@@ -564,7 +639,12 @@
 
 
        </section>
+
       </main>
+
+
+
+
       <aside class="aside">
 
         <section class="section">
@@ -641,5 +721,9 @@
 
 
     </div>
+
+    <script src="{% static 'js/dialogs.js' %}"></script>
+    
+    
   </body>
 </html>

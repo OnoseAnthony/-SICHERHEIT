@@ -126,6 +126,10 @@ STATICFILES_DIRS = [
     STATIC_DIR
 ]
 
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'password_manager/media'
+
 # Custom Django auth settings
 AUTH_USER_MODEL = 'manager.User'
 

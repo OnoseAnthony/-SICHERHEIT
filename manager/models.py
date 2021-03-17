@@ -18,6 +18,7 @@ class Passwords(models.Model):
     registered_username =  models.CharField(max_length = 30, blank = True, null = True)
     registered_email_address =  models.CharField(max_length = 30, blank = True, null = True)
     qrcode_image = models.ImageField(upload_to='qrcode', blank=True, null=True)
+    date_created = models.DateTimeField(auto_now_add=True, null=True)
 
 
     class Meta:

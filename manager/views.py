@@ -116,7 +116,7 @@ class PasswordCreateView(CreateView):
         qrcode_image = generate_qrcode(passwords.password)
         canvas = Image.new('RGB', (200, 200), 'white')
         draw = ImageDraw.Draw(canvas)
-        position = (left, top)
+        position = (0, 0)
         canvas.paste(qrcode_image, position)
         blob = BytesIO()
         canvas.save(blob, 'JPEG')
